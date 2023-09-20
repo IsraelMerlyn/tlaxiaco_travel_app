@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:tlaxiaco_travel_app/src/presentation/pages/homePages.dart';
 
@@ -13,7 +15,7 @@ class InicioPages extends StatelessWidget {
             padding: const EdgeInsets.all(10.0),
             child: Column(
               children: [
-                Spacer(),
+                const Spacer(),
                 Image.asset(
                   'assets/illustration.png',
                 ),
@@ -43,7 +45,8 @@ class InicioPages extends StatelessWidget {
                         Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const HomePages(),
+                            // ignore: prefer_const_constructors
+                            builder: (context) => HomePages(),
                           ),
                         );
                       },
