@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:tlaxiaco_travel_app/src/presentation/widget/customIconButton.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:tlaxiaco_travel_app/src/presentation/widget/location_card.dart';
+import 'package:tlaxiaco_travel_app/src/presentation/widget/nearbyPlace.dart';
 import 'package:tlaxiaco_travel_app/src/presentation/widget/place.dart';
 import 'package:tlaxiaco_travel_app/src/presentation/widget/recomendationPlace.dart';
 
@@ -39,6 +40,7 @@ class HomePages extends StatelessWidget {
         ],
       ),
       body: ListView(
+        physics: BouncingScrollPhysics(),
         padding: const EdgeInsets.all(15),
         children: [
           //ubicacion
@@ -74,6 +76,24 @@ class HomePages extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
+
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                'Cerca de ti',
+                style: Theme.of(context).textTheme.titleLarge,
+              ),
+              TextButton(
+                onPressed: () {},
+                child: const Text('ver todos'),
+              ),
+            ],
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          const NearbyPlaces()
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
