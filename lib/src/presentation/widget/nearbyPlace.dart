@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:tlaxiaco_travel_app/src/models/nearbyPlace_model.dart';
+import 'package:tlaxiaco_travel_app/src/models/recomendationPlace_model.dart';
 import 'package:tlaxiaco_travel_app/src/presentation/widget/distance.dart';
 
 class NearbyPlaces extends StatelessWidget {
@@ -31,7 +32,7 @@ class NearbyPlaces extends StatelessWidget {
                       ClipRRect(
                         borderRadius: BorderRadius.circular(12),
                         child: Image.asset(
-                          nearbyPlcesModel[index].image,
+                          recommendedPlaces[index].image,
                           height: double.maxFinite,
                           width: 130,
                           fit: BoxFit.cover,
@@ -46,17 +47,19 @@ class NearbyPlaces extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Adoquin principal',
-                              style: TextStyle(
+                              recommendedPlaces[index].name,
+                              style: const TextStyle(
                                   fontSize: 16, fontWeight: FontWeight.bold),
                             ),
-                            Text('Puerto Escondido'),
-                            SizedBox(
+                            Text(recommendedPlaces[index].location),
+                            const SizedBox(
                               height: 10,
                             ),
                             //Distancia de ubicacion
-                            DistanceWidget(),
-                            Spacer(),
+                            DistanceWidget(
+                              location: recommendedPlaces[index].location,
+                            ),
+                            const Spacer(),
                             Row(
                               children: [
                                 Icon(
@@ -68,22 +71,22 @@ class NearbyPlaces extends StatelessWidget {
                                   '5.5',
                                   style: TextStyle(fontSize: 12),
                                 ),
-                                Spacer(),
-                                RichText(
-                                  text: TextSpan(
-                                      style: TextStyle(
-                                        fontSize: 20,
-                                        color: Theme.of(context).primaryColor,
-                                      ),
-                                      text: '\$22',
-                                      children: [
-                                        TextSpan(
-                                            style: TextStyle(
-                                                fontSize: 12,
-                                                color: Colors.black54),
-                                            text: '/ persona')
-                                      ]),
-                                ),
+                                const Spacer(),
+                                // RichText(
+                                //   text: TextSpan(
+                                //       style: TextStyle(
+                                //         fontSize: 20,
+                                //         color: Theme.of(context).primaryColor,
+                                //       ),
+                                //       text: '\$22',
+                                //       children: [
+                                //         TextSpan(
+                                //             style: TextStyle(
+                                //                 fontSize: 12,
+                                //                 color: Colors.black54),
+                                //             text: '/ persona')
+                                //       ]),
+                                // ),
                               ],
                             )
                           ],

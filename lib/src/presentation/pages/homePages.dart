@@ -22,7 +22,7 @@ class HomePages extends StatelessWidget {
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text('Buenas noches'),
+            const Text('Buenas tardes'),
             Text(
               'IsraelMerlyn',
               style: Theme.of(context).textTheme.labelMedium,
@@ -40,7 +40,7 @@ class HomePages extends StatelessWidget {
         ],
       ),
       body: ListView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         padding: const EdgeInsets.all(15),
         children: [
           //ubicacion

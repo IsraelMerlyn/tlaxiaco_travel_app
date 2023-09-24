@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
 
 class DistanceWidget extends StatelessWidget {
-  const DistanceWidget({super.key});
+  final String location;
+  const DistanceWidget({super.key, required this.location});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +14,7 @@ class DistanceWidget extends StatelessWidget {
           color: Colors.black,
           size: 14,
         ),
-        const Text(
+        Text(
           'Tlaxiaco',
           style: TextStyle(color: Colors.black),
         ),
@@ -43,7 +44,7 @@ class DistanceWidget extends StatelessWidget {
           width: 2,
         ),
         Text(
-          'Puerto',
+          location,
           style: TextStyle(color: Theme.of(context).primaryColor),
         ),
       ],

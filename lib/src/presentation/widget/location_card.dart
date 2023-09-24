@@ -13,8 +13,8 @@ class LocationCard extends StatelessWidget {
         child: Row(
           children: [
             Image.asset(
-              'assets/map.png',
-              width: 100,
+              'assets/ubicacion.png',
+              width: 70,
             ),
             const SizedBox(
               width: 10,
